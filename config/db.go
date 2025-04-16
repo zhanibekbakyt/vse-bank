@@ -2,7 +2,7 @@ package config
 
 import (
 	"log"
-	"vse-bank/models" // Import your models package
+	"vse-bank/models"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -19,7 +19,6 @@ func ConnectDatabase() {
 		log.Println("✅ Database connection successful.")
 	}
 
-	// ✅ Auto-migrate your models here
 	err = database.AutoMigrate(&models.User{}, &models.Bank{}, &models.Loan{})
 	if err != nil {
 		log.Fatal("❌ Failed to auto-migrate:", err)

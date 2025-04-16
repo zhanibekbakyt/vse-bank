@@ -9,7 +9,6 @@ import (
 )
 
 func main() {
-	// Connect to DB and set to controller
 	config.ConnectDatabase()
 	controllers.SetDB(config.DB)
 
