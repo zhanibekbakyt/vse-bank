@@ -1,0 +1,4 @@
+CREATE TABLE banks (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL
+);

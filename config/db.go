@@ -2,7 +2,6 @@ package config
 
 import (
 	"log"
-	"vse-bank/models"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -19,12 +18,13 @@ func ConnectDatabase() {
 		log.Println("✅ Database connection successful.")
 	}
 
-	err = database.AutoMigrate(&models.User{}, &models.Bank{}, &models.Loan{})
-	if err != nil {
-		log.Fatal("❌ Failed to auto-migrate:", err)
-	} else {
-		log.Println("✅ Auto-migration successful.")
-	}
+	// ❌ REMOVE AutoMigrate — you now use Golang-migrate for DB schema
+	// err = database.AutoMigrate(&models.User{}, &models.Bank{}, &models.Loan{})
+	// if err != nil {
+	//     log.Fatal("❌ Failed to auto-migrate:", err)
+	// } else {
+	//     log.Println("✅ Auto-migration successful.")
+	// }
 
 	DB = database
 }
